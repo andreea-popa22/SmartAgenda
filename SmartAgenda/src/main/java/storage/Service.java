@@ -100,4 +100,18 @@ public class Service {
         // error if not found
         return list.get(0);
     }
+
+    public static Client getClientById(int id){
+        List<Client> list = PersonRepository.getInstance().getClients().stream().filter(p -> Objects.equals(p.getClientId(), id)).map(p -> Client.builder()
+                        .clientId(p.getClientId())
+                        .name(p.getName())
+                        .age(p.getAge())
+                        .email(p.getEmail())
+                        .phone(p.getPhone())
+                        .gender(p.getGender())
+                        .build())
+                .collect(Collectors.toList());
+        // error if not found
+        return list.get(0);
+    }
 }
