@@ -1,8 +1,15 @@
 package storage;
 
+import entities.Appointment;
 import entities.Client;
+import entities.Hour;
+import entities.Provider;
 import entitiesHelpers.Gender;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -113,5 +120,81 @@ public class Service {
                 .collect(Collectors.toList());
         // error if not found
         return list.get(0);
+    }
+
+    public static Provider getProviderById(int id){
+        List<Provider> list = PersonRepository.getInstance().getProviders().stream().filter(p -> Objects.equals(p.getId(), id)).map(p -> Provider.builder()
+                        .id(p.getId())
+                        .experience(p.getExperience())
+                        .name(p.getName())
+                        .age(p.getAge())
+                        .email(p.getEmail())
+                        .phone(p.getPhone())
+                        .gender(p.getGender())
+                        .build())
+                .collect(Collectors.toList());
+        // error if not found
+        return list.get(0);
+    }
+
+    public static Appointment addNewAppointment() throws ParseException {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Id: ");
+        int id = scanner.nextInt();
+
+        System.out.println("Duration: ");
+        float duration = scanner.nextFloat();
+
+        System.out.println("Date (DD/MM/YYYY): ");
+        String dateInput = scanner.nextLine();
+        Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dateInput);
+
+        System.out.println("Time (hh:mm): ");
+        Hour time = Service.stringToHour(scanner.nextLine());
+
+        System.out.println("Client id: ");
+        int clientId = scanner.nextInt();
+        Client client = Service.getClientById(clientId);
+
+        System.out.println("Provider id: ");
+        int providerId = scanner.nextInt();
+        Provider provider = Service.getProviderById(providerId);
+
+        System.out.println("Location id: ");
+        int locationId = scanner.nextInt();
+        // TODO getLocationById
+        // Location = Service.getLocationById(locationId);
+
+        System.out.println("Service Type: ");
+        // TODO print all service types
+        String serviceType = scanner.nextLine();
+
+        System.out.println("Price: ");
+        int price = scanner.nextInt();
+
+        // TODO add appointment to client and provider schedule
+        Appointment appointment = Appointment.builder()
+                .id(id)
+                .duration(duration)
+                .date(date)
+                .time(time)
+                .client(client)
+                .provider(provider)
+                .location(location)
+                .serviceType(serviceType)
+                .price(price)
+                .build();
+        return appointment;
+    }
+
+    public static Hour stringToHour(String s) {
+        int hour = Integer.parseInt(s.substring(0, 2));
+        int minutes = Integer.parseInt(s.substring(3, 5));
+        Hour h = Hour.builder()
+                .hour(hour)
+                .minutes(minutes)
+                .build();
+        return h;
     }
 }

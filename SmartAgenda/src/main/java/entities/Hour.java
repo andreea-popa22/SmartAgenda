@@ -1,7 +1,10 @@
 package entities;
 
+import lombok.Builder;
+
 import java.util.Comparator;
 
+@Builder
 public class Hour implements Comparator<Hour> {
     private int hour;
     private int minutes;
