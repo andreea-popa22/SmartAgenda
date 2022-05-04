@@ -5,10 +5,13 @@ import entities.Person;
 import entities.Provider;
 import entitiesHelpers.Gender;
 import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
+@Setter
 public class PersonRepository {
     private List<Client> clients = new ArrayList<>();
     private List<Provider> providers = new ArrayList<>();
@@ -97,4 +100,5 @@ public class PersonRepository {
        }
         return result.toString();
     }
+
 }
