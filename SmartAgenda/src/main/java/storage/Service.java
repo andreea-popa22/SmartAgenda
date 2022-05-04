@@ -3,9 +3,12 @@ package storage;
 import entities.Client;
 import entitiesHelpers.Gender;
 
+import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Service {
     public static boolean phoneNumberValidation( String phone) {
@@ -82,5 +85,19 @@ public class Service {
         // bug
         //PersonRepository.getInstance().getClients().add(client);
         return client;
+    }
+
+    public static Client getClientByPhoneNumber(String phone){
+        List<Client> list = PersonRepository.getInstance().getClients().stream().filter(p -> Objects.equals(p.getPhone(), phone)).map(p -> Client.builder()
+                        .clientId(p.getClientId())
+                        .name(p.getName())
+                        .age(p.getAge())
+                        .email(p.getEmail())
+                        .phone(p.getPhone())
+                        .gender(p.getGender())
+                        .build())
+                .collect(Collectors.toList());
+        // error if not found
+        return list.get(0);
     }
 }
