@@ -1,5 +1,6 @@
 package entities;
 
+import entitiesHelpers.ServiceType;
 import lombok.Data;
 import java.time.LocalDateTime;
 
@@ -11,4 +12,5 @@ public class Appointment {
     private Provider provider;
     private Location location;
     private ServiceType serviceType;
+    private Integer price;
 }

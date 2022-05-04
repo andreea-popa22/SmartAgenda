@@ -1,4 +1,4 @@
-package entities;
+package entitiesHelpers;
 
 public enum ServiceType {
     MEDICAL("Medical"),
