@@ -1,12 +1,12 @@
-package storage;
+package smartAgenda.storage;
 
 import entities.*;
-import entitiesHelpers.Gender;
-import entitiesHelpers.ServiceType;
+import smartAgenda.entities.*;
+import smartAgenda.entitiesHelpers.Gender;
+import smartAgenda.entitiesHelpers.ServiceType;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;

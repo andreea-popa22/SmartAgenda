@@ -1,6 +1,6 @@
-package entities;
+package smartAgenda.entities;
 
-import entitiesHelpers.ServiceType;
+import smartAgenda.entitiesHelpers.ServiceType;
 import lombok.Builder;
 import lombok.Data;
 

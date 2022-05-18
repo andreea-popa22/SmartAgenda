@@ -1,9 +1,9 @@
-package storage;
+package smartAgenda.storage;
 
-import entities.Client;
-import entities.Person;
-import entities.Provider;
-import entitiesHelpers.Gender;
+import smartAgenda.entities.Client;
+import smartAgenda.entities.Person;
+import smartAgenda.entities.Provider;
+import smartAgenda.entitiesHelpers.Gender;
 import lombok.Getter;
 import lombok.Setter;
 

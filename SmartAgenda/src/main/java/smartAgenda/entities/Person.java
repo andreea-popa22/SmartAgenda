@@ -1,6 +1,6 @@
-package entities;
+package smartAgenda.entities;
 
-import entitiesHelpers.Gender;
+import smartAgenda.entitiesHelpers.Gender;
 import lombok.Getter;
 
 @Getter

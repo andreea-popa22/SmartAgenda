@@ -1,7 +1,11 @@
-import entities.Client;
-import storage.PersonRepository;
-import storage.Service;
+package smartAgenda;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import smartAgenda.entities.Client;
+import smartAgenda.storage.PersonRepository;
+import smartAgenda.storage.Service;
+
+@SpringBootApplication
 public class Main {
 
     public static void main(String[] args) {

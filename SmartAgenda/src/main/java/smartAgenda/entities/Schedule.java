@@ -1,4 +1,4 @@
-package entities;
+package smartAgenda.entities;
 
 import lombok.Data;
 

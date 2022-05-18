@@ -1,9 +1,7 @@
-package entities;
+package smartAgenda.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Comparator;
 
 @Getter
 @Setter
