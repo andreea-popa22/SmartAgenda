@@ -1,10 +1,8 @@
 package storage;
 
-import entities.Appointment;
-import entities.Client;
-import entities.Hour;
-import entities.Provider;
+import entities.*;
 import entitiesHelpers.Gender;
+import entitiesHelpers.ServiceType;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -123,18 +121,11 @@ public class Service {
     }
 
     public static Provider getProviderById(int id){
-        List<Provider> list = PersonRepository.getInstance().getProviders().stream().filter(p -> Objects.equals(p.getId(), id)).map(p -> Provider.builder()
-                        .id(p.getId())
-                        .experience(p.getExperience())
-                        .name(p.getName())
-                        .age(p.getAge())
-                        .email(p.getEmail())
-                        .phone(p.getPhone())
-                        .gender(p.getGender())
-                        .build())
-                .collect(Collectors.toList());
-        // error if not found
-        return list.get(0);
+        return PersonRepository.getInstance().getProviders().stream().filter(p -> Objects.equals(p.getId(), id)).findFirst().orElse(null);
+    }
+
+    public static Location getLocationById(int id){
+        return LocationRepository.getInstance().getLocations().stream().filter(p -> Objects.equals(p.getId(), id)).findFirst().orElse(null);
     }
 
     public static Appointment addNewAppointment() throws ParseException {
@@ -163,12 +154,12 @@ public class Service {
 
         System.out.println("Location id: ");
         int locationId = scanner.nextInt();
-        // TODO getLocationById
-        // Location = Service.getLocationById(locationId);
+        Location location = Service.getLocationById(locationId);
 
         System.out.println("Service Type: ");
         // TODO print all service types
-        String serviceType = scanner.nextLine();
+        String serviceTypeString = scanner.nextLine();
+        ServiceType serviceType = ServiceType.valueOf(serviceTypeString);
 
         System.out.println("Price: ");
         int price = scanner.nextInt();
