@@ -1,6 +1,5 @@
 package smartAgenda.storage;
 
-import entities.*;
 import smartAgenda.entities.*;
 import smartAgenda.entitiesHelpers.Gender;
 import smartAgenda.entitiesHelpers.ServiceType;

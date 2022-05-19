@@ -1,14 +1,21 @@
 package smartAgenda;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import smartAgenda.entities.Client;
+import smartAgenda.storage.LocationRepository;
 import smartAgenda.storage.PersonRepository;
 import smartAgenda.storage.Service;
 
 @SpringBootApplication
 public class Main {
+    private static PersonRepository personRepository = PersonRepository.getInstance();
+    private static LocationRepository locationRepository = LocationRepository.getInstance();
 
     public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
 
         String phone1 = "0765457692";
         // System.out.println(Service.phoneNumberValidation(phone1));
@@ -19,7 +26,7 @@ public class Main {
         // System.out.println(client.toString());
 
         System.out.println("~Clients and providers:");
-        PersonRepository personRepository = PersonRepository.getInstance();
+
         System.out.println(personRepository.toString());
 
         Client client2 = Service.getClientByPhoneNumber(phone1);
