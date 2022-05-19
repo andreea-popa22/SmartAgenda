@@ -21,7 +21,7 @@ public class LocationService {
         return locations;
     }
 
-    public static Location findById(int id){
+    public Location findById(int id){
         return locations.stream()
                 .filter(location -> location.getId() == id)
                 .findFirst()
