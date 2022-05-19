@@ -2,12 +2,10 @@ package smartAgenda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 import smartAgenda.entities.Client;
 import smartAgenda.storage.LocationRepository;
 import smartAgenda.storage.PersonRepository;
-import smartAgenda.storage.Service;
+import smartAgenda.service.Service;
 
 @SpringBootApplication
 public class Main {

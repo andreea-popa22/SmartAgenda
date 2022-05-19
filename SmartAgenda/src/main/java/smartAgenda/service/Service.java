@@ -1,8 +1,10 @@
-package smartAgenda.storage;
+package smartAgenda.service;
 
 import smartAgenda.entities.*;
 import smartAgenda.entitiesHelpers.Gender;
 import smartAgenda.entitiesHelpers.ServiceType;
+import smartAgenda.storage.LocationRepository;
+import smartAgenda.storage.PersonRepository;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
