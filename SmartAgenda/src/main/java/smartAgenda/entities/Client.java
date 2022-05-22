@@ -1,9 +1,9 @@
-package smartAgenda.entities;
+package smartagenda.entities;
 
-import smartAgenda.entitiesHelpers.Gender;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import smartagenda.entitiesHelpers.Gender;
 
 @Getter
 @Setter
@@ -15,11 +15,16 @@ public class Client extends Person{
     {
         this.clientId = clientId;
         this.name = name;
-        this.phone = phone;
-        this.email = email;
         this.age = age;
+        this.email = email;
+        this.phone = phone;
         this.gender = gender;
         this.schedule = new Schedule();
+    }
+
+    @Override
+    public String getDescription() {
+        return String.format("Client %s", name);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package smartAgenda.entities;
+package smartagenda.entities;
 
 import lombok.Getter;
 import lombok.Setter;

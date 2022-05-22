@@ -1,9 +1,9 @@
-package smartAgenda.entities;
+package smartagenda.entities;
 
-import smartAgenda.entitiesHelpers.Gender;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import smartagenda.entitiesHelpers.Gender;
 
 @Getter
 @Setter
@@ -23,4 +23,10 @@ public class Provider extends Person{
         this.gender = gender;
         this.schedule = new Schedule();
     }
+
+    @Override
+    public String getDescription() {
+        return String.format("Provider %s", name);
+    }
+
 }

@@ -1,7 +1,8 @@
-package smartAgenda.entities;
+package smartagenda.entities;
 
-import smartAgenda.entitiesHelpers.Gender;
+import lombok.Data;
 import lombok.Getter;
+import smartagenda.entitiesHelpers.Gender;
 
 @Getter
 public abstract class Person {
@@ -11,4 +12,6 @@ public abstract class Person {
     protected Integer age;
     protected Gender gender;
     protected Schedule schedule;
+
+    public abstract String getDescription();
 }

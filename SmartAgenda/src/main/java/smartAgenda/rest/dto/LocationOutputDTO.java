@@ -1,4 +1,4 @@
-package smartAgenda.rest.dto;
+package smartagenda.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

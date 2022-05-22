@@ -1,14 +1,13 @@
-package smartAgenda.rest;
-
-import org.modelmapper.ModelMapper;
+package smartagenda.rest;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
-import smartAgenda.entities.Location;
-import smartAgenda.rest.dto.LocationOutputDTO;
-import smartAgenda.service.LocationService;
-import smartAgenda.storage.LocationRepository;
+import smartagenda.entities.Location;
+import smartagenda.rest.dto.LocationOutputDTO;
+import smartagenda.service.LocationService;
+import smartagenda.storage.LocationRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;

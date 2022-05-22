@@ -1,13 +1,11 @@
-package smartAgenda.service;
+package smartagenda.service;
 
 import org.springframework.stereotype.Service;
-import smartAgenda.entities.Location;
-import smartAgenda.storage.LocationRepository;
-import smartAgenda.rest.exception.LocationNotFoundException;
+import smartagenda.entities.Location;
+import smartagenda.rest.exception.LocationNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class LocationService {

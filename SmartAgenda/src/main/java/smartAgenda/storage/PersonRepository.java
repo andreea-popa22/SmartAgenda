@@ -1,19 +1,21 @@
-package smartAgenda.storage;
+package smartagenda.storage;
 
-import org.springframework.stereotype.Service;
-import smartAgenda.entities.Client;
-import smartAgenda.entities.Person;
-import smartAgenda.entities.Provider;
-import smartAgenda.entitiesHelpers.Gender;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Builder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
+import smartagenda.entities.Client;
+import smartagenda.entities.Person;
+import smartagenda.entities.Provider;
+import smartagenda.entitiesHelpers.Gender;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
-@Service
 public class PersonRepository {
     private List<Client> clients = new ArrayList<>();
     private List<Provider> providers = new ArrayList<>();

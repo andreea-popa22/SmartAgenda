@@ -1,11 +1,11 @@
-package smartAgenda;
+package smartagenda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import smartAgenda.entities.Client;
-import smartAgenda.storage.LocationRepository;
-import smartAgenda.storage.PersonRepository;
-import smartAgenda.service.Service;
+import smartagenda.entities.Client;
+import smartagenda.service.Service;
+import smartagenda.storage.LocationRepository;
+import smartagenda.storage.PersonRepository;
 
 @SpringBootApplication
 public class Main {

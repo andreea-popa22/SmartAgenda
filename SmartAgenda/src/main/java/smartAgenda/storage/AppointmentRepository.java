@@ -1,4 +1,4 @@
-package smartAgenda.storage;
+package smartagenda.storage;
 
 public class AppointmentRepository {
 }

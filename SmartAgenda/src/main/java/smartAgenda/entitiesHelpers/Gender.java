@@ -1,4 +1,4 @@
-package smartAgenda.entitiesHelpers;
+package smartagenda.entitiesHelpers;
 
 public enum Gender {
     MALE,
