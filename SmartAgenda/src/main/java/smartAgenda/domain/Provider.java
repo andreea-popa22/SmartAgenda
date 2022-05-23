@@ -1,9 +1,8 @@
-package smartagenda.entities;
+package smartagenda.domain;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import smartagenda.entitiesHelpers.Gender;
 
 @Getter
 @Setter

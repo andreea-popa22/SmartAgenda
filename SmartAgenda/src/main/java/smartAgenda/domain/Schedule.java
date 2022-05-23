@@ -1,4 +1,4 @@
-package smartagenda.entities;
+package smartagenda.domain;
 
 import lombok.Data;
 

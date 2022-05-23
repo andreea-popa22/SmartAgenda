@@ -1,8 +1,7 @@
-package smartagenda.entities;
+package smartagenda.domain;
 
 import lombok.Builder;
 import lombok.Data;
-import smartagenda.entitiesHelpers.ServiceType;
 
 import java.util.Date;
 

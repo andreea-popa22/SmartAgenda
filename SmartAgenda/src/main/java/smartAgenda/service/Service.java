@@ -1,8 +1,8 @@
 package smartagenda.service;
 
-import smartagenda.entities.*;
-import smartagenda.entitiesHelpers.Gender;
-import smartagenda.entitiesHelpers.ServiceType;
+import smartagenda.domain.*;
+import smartagenda.domain.Gender;
+import smartagenda.domain.ServiceType;
 import smartagenda.storage.LocationRepository;
 import smartagenda.storage.PersonRepository;
 

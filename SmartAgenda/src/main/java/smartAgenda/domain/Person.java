@@ -1,8 +1,6 @@
-package smartagenda.entities;
+package smartagenda.domain;
 
-import lombok.Data;
 import lombok.Getter;
-import smartagenda.entitiesHelpers.Gender;
 
 @Getter
 public abstract class Person {

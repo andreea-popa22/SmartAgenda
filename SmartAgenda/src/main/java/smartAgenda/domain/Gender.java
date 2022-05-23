@@ -1,4 +1,4 @@
-package smartagenda.entitiesHelpers;
+package smartagenda.domain;
 
 public enum Gender {
     MALE,

@@ -1,15 +1,11 @@
 package smartagenda.storage;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.Builder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Service;
-import smartagenda.entities.Client;
-import smartagenda.entities.Person;
-import smartagenda.entities.Provider;
-import smartagenda.entitiesHelpers.Gender;
+import smartagenda.domain.Client;
+import smartagenda.domain.Person;
+import smartagenda.domain.Provider;
+import smartagenda.domain.Gender;
 
 import java.util.ArrayList;
 import java.util.List;
