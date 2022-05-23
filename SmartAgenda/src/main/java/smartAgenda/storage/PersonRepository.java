@@ -54,7 +54,7 @@ public class PersonRepository {
                 .gender(Gender.MALE)
                 .build();
         Provider provider1 = Provider.builder()
-                .id(1)
+                .providerId(1)
                 .name("Muresan Elena")
                 .age(35)
                 .email("elena-muresan@yahoo.com")
@@ -62,7 +62,7 @@ public class PersonRepository {
                 .gender(Gender.FEMALE)
                 .build();
         Provider provider2 = Provider.builder()
-                .id(2)
+                .providerId(2)
                 .name("Marcov Elena")
                 .age(52)
                 .email("elena-marcov20@yahoo.com")
@@ -92,7 +92,7 @@ public class PersonRepository {
             }
             else {
                 result.append("Provider ");
-                result.append(((Provider)person).getId());
+                result.append(((Provider)person).getProviderId());
             }
             result.append(" ");
             result.append(person.getName());

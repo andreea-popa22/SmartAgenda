@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
-import smartagenda.entities.Location;
+import smartagenda.domain.Location;
 import smartagenda.rest.dto.LocationOutputDTO;
 import smartagenda.service.LocationService;
 import smartagenda.storage.LocationRepository;

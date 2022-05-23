@@ -2,7 +2,7 @@ package smartagenda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import smartagenda.entities.Client;
+import smartagenda.domain.Client;
 import smartagenda.service.Service;
 import smartagenda.storage.LocationRepository;
 import smartagenda.storage.PersonRepository;

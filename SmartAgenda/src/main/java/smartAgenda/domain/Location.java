@@ -2,17 +2,24 @@ package smartagenda.domain;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Data
+@NoArgsConstructor
+@Entity
 public class Location {
-    private int id;
+    @Id
+    private int locationId;
     private String name;
     private String address;
     private String contact;
 
     @Builder
-    public Location(int id, String name, String address, String contact) {
-        this.id = id;
+    public Location(int locationId, String name, String address, String contact) {
+        this.locationId = locationId;
         this.name = name;
         this.address = address;
         this.contact = contact;

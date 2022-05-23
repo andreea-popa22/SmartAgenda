@@ -1,7 +1,7 @@
 package smartagenda.service;
 
 import org.springframework.stereotype.Service;
-import smartagenda.entities.Location;
+import smartagenda.domain.Location;
 import smartagenda.rest.exception.LocationNotFoundException;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class LocationService {
 
     public Location findById(int id){
         return locations.stream()
-                .filter(location -> location.getId() == id)
+                .filter(location -> location.getLocationId() == id)
                 .findFirst()
                 .orElseThrow(() -> new LocationNotFoundException("Location not found"));
     }

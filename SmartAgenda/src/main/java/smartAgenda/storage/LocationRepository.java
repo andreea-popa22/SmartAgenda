@@ -2,7 +2,7 @@ package smartagenda.storage;
 
 import lombok.Getter;
 import lombok.Setter;
-import smartagenda.entities.Location;
+import smartagenda.domain.Location;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,19 +24,19 @@ public class LocationRepository {
 
     private LocationRepository() {
         Location location1 = Location.builder()
-                .id(1)
+                .locationId(1)
                 .name("Salon Coquette")
                 .address("Strada Libertatii 14")
                 .contact("0754323456")
                 .build();
         Location location2 = Location.builder()
-                .id(2)
+                .locationId(2)
                 .name("Ateneul Roman")
                 .address("Strada Mures 24")
                 .contact("0754326786")
                 .build();
         Location location3 = Location.builder()
-                .id(1)
+                .locationId(1)
                 .name("Sala Palatului")
                 .address("Bulevardul Carol 2")
                 .contact("0752123456")

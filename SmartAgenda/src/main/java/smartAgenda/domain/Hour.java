@@ -1,11 +1,20 @@
 package smartagenda.domain;
 
-import lombok.Builder;
+import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Comparator;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
+@Entity
 public class Hour implements Comparator<Hour> {
+    @Id
+    private int hourId;
     private int hour;
     private int minutes;
 

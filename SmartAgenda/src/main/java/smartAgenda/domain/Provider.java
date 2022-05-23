@@ -2,18 +2,25 @@ package smartagenda.domain;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@Entity
 public class Provider extends Person{
-    private int id;
+    @Id
+    private int providerId;
     private int experience;
 
     @Builder
-    public Provider(int id, int experience, String name, String phone, String email, Integer age, Gender gender)
+    public Provider(int providerId, int experience, String name, String phone, String email, Integer age, Gender gender)
     {
-        this.id = id;
+        this.providerId = providerId;
         this.experience = experience;
         this.name = name;
         this.phone = phone;

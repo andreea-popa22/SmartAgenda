@@ -122,11 +122,11 @@ public class Service {
     }
 
     public static Provider getProviderById(int id){
-        return PersonRepository.getInstance().getProviders().stream().filter(p -> Objects.equals(p.getId(), id)).findFirst().orElse(null);
+        return PersonRepository.getInstance().getProviders().stream().filter(p -> Objects.equals(p.getProviderId(), id)).findFirst().orElse(null);
     }
 
     public static Location getLocationById(int id){
-        return LocationRepository.getInstance().getLocations().stream().filter(p -> Objects.equals(p.getId(), id)).findFirst().orElse(null);
+        return LocationRepository.getInstance().getLocations().stream().filter(p -> Objects.equals(p.getLocationId(), id)).findFirst().orElse(null);
     }
 
     public static Appointment addNewAppointment() throws ParseException {
@@ -142,20 +142,23 @@ public class Service {
         String dateInput = scanner.nextLine();
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dateInput);
 
-        System.out.println("Time (hh:mm): ");
-        Hour time = Service.stringToHour(scanner.nextLine());
+        //System.out.println("Time (hh:mm): ");
+        //Hour time = Service.stringToHour(scanner.nextLine());
+        System.out.println("Hour id: ");
+        int hourId = scanner.nextInt();
+        // get hour by id
 
         System.out.println("Client id: ");
         int clientId = scanner.nextInt();
-        Client client = Service.getClientById(clientId);
+        //Client client = Service.getClientById(clientId);
 
         System.out.println("Provider id: ");
         int providerId = scanner.nextInt();
-        Provider provider = Service.getProviderById(providerId);
+        //Provider provider = Service.getProviderById(providerId);
 
         System.out.println("Location id: ");
         int locationId = scanner.nextInt();
-        Location location = Service.getLocationById(locationId);
+        //Location location = Service.getLocationById(locationId);
 
         System.out.println("Service Type: ");
         // TODO print all service types
@@ -170,10 +173,10 @@ public class Service {
                 .id(id)
                 .duration(duration)
                 .date(date)
-                .time(time)
-                .client(client)
-                .provider(provider)
-                .location(location)
+                .hourId(hourId)
+                .clientId(clientId)
+                .providerId(providerId)
+                .locationId(locationId)
                 .serviceType(serviceType)
                 .price(price)
                 .build();
