@@ -2,6 +2,7 @@ package smartagenda.storage;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Singleton;
 import smartagenda.domain.Client;
 import smartagenda.domain.Person;
 import smartagenda.domain.Provider;
@@ -12,20 +13,11 @@ import java.util.List;
 
 @Getter
 @Setter
+@Singleton
 public class PersonRepository {
     private List<Client> clients = new ArrayList<>();
     private List<Provider> providers = new ArrayList<>();
     private List<Person> people = new ArrayList<>();
-
-    private static PersonRepository person_repository_instance = null;
-
-    public static PersonRepository getInstance()
-    {
-        if (person_repository_instance == null)
-            person_repository_instance = new PersonRepository();
-
-        return person_repository_instance;
-    }
 
     private PersonRepository()
     {

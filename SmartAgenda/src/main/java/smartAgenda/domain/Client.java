@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 @Setter
 @NoArgsConstructor
 @Entity
+@DiscriminatorValue("Client")
 public class Client extends Person{
     @Id
     private int clientId;
@@ -25,7 +27,7 @@ public class Client extends Person{
         this.email = email;
         this.phone = phone;
         this.gender = gender;
-        this.schedule = new Schedule();
+        //this.schedule = new Schedule();
     }
 
     @Override

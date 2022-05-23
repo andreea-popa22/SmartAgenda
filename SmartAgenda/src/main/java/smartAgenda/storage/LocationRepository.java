@@ -2,6 +2,7 @@ package smartagenda.storage;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Singleton;
 import smartagenda.domain.Location;
 
 import java.util.ArrayList;
@@ -9,18 +10,9 @@ import java.util.List;
 
 @Getter
 @Setter
+@Singleton
 public class LocationRepository {
     private List<Location> locations = new ArrayList<>();
-
-    private static LocationRepository location_repository_instance = null;
-
-    public static LocationRepository getInstance()
-    {
-        if (location_repository_instance == null)
-            location_repository_instance = new LocationRepository();
-
-        return location_repository_instance;
-    }
 
     private LocationRepository() {
         Location location1 = Location.builder()
