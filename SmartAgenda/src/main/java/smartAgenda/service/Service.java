@@ -3,18 +3,13 @@ package smartagenda.service;
 import smartagenda.domain.*;
 import smartagenda.domain.Gender;
 import smartagenda.domain.ServiceType;
-import smartagenda.storage.LocationRepository;
-import smartagenda.storage.PersonRepository;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class Service {
     public static boolean phoneNumberValidation( String phone) {

@@ -11,10 +11,10 @@ import java.util.List;
 @Getter
 @Setter
 @Singleton
-public class LocationRepository {
+public class LocationStorage {
     private List<Location> locations = new ArrayList<>();
 
-    private LocationRepository() {
+    private LocationStorage() {
         Location location1 = Location.builder()
                 .locationId(1)
                 .name("Salon Coquette")

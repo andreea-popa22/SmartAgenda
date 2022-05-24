@@ -24,7 +24,7 @@ public class TimeSlot {
     private int startHourId;
     private int endHourId;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "timeslot_to_schedule",
             joinColumns = @JoinColumn(name = "schedule_id"),

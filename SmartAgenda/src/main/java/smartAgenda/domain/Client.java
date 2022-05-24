@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Setter
 @NoArgsConstructor
 @Entity
-@DiscriminatorValue("Client")
+@DiscriminatorValue("1")
 public class Client extends Person{
 
     @Builder

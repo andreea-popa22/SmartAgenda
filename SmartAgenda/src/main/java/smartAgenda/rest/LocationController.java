@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import smartagenda.domain.Location;
 import smartagenda.rest.dto.LocationOutputDTO;
 import smartagenda.service.LocationService;
-import smartagenda.storage.LocationRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;

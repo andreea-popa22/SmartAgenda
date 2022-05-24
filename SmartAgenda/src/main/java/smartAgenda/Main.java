@@ -1,12 +1,7 @@
 package smartagenda;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import smartagenda.domain.Client;
-import smartagenda.service.Service;
-import smartagenda.storage.LocationRepository;
-import smartagenda.storage.PersonRepository;
 
 @SpringBootApplication
 public class Main {

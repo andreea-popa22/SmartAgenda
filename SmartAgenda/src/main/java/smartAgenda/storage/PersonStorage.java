@@ -14,12 +14,12 @@ import java.util.List;
 @Getter
 @Setter
 @Singleton
-public class PersonRepository {
+public class PersonStorage {
     private List<Client> clients = new ArrayList<>();
     private List<Provider> providers = new ArrayList<>();
     private List<Person> people = new ArrayList<>();
 
-    private PersonRepository()
+    private PersonStorage()
     {
         Client client1 = Client.builder()
                 .personId(1)
