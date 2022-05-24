@@ -1,7 +1,9 @@
 package smartagenda.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smartagenda.domain.Location;
+import smartagenda.repository.LocationRepository;
 import smartagenda.rest.exception.LocationNotFoundException;
 
 import java.util.ArrayList;
@@ -9,20 +11,21 @@ import java.util.List;
 
 @Service
 public class LocationService {
-    private static final List<Location> locations = new ArrayList<>();
+    @Autowired
+    private LocationRepository locationRepository;
 
-    public void addLocation(Location location){
-        locations.add(location);
+    public void addLocation(Location location) {
+        locationRepository.save(location);
     }
 
-    public List<Location> findAll(){
-        return locations;
+    public List<Location> findAll() {
+        return locationRepository.findAll();
     }
-
-    public Location findById(int id){
-        return locations.stream()
-                .filter(location -> location.getLocationId() == id)
-                .findFirst()
-                .orElseThrow(() -> new LocationNotFoundException("Location not found"));
+    public Location findFirstByName(String name) {
+        Location location = locationRepository.findFirstByName(name);
+        if (location == null) {
+            throw new LocationNotFoundException("Location not found");
+        }
+        return location;
     }
 }

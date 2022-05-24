@@ -18,5 +18,5 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
     @Query(value = "SELECT p FROM Location p WHERE person_type=2")
     List<Provider> findAllProviders();
 
-    Person findById(int person_id);
+    Person findFirstByPersonId(int person_id);
 }
