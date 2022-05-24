@@ -15,14 +15,11 @@ import javax.persistence.Id;
 @Entity
 @DiscriminatorValue("Provider")
 public class Provider extends Person{
-    @Id
-    private int providerId;
     private int experience;
-
     @Builder
-    public Provider(int providerId, int experience, String name, String phone, String email, Integer age, Gender gender)
+    public Provider(int personId, int experience, String name, String phone, String email, Integer age, Gender gender)
     {
-        this.providerId = providerId;
+        this.personId = personId;
         this.experience = experience;
         this.name = name;
         this.phone = phone;

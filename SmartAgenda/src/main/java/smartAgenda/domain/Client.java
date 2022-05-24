@@ -15,13 +15,11 @@ import javax.persistence.Id;
 @Entity
 @DiscriminatorValue("Client")
 public class Client extends Person{
-    @Id
-    private int clientId;
 
     @Builder
-    public Client(int clientId, String name, Integer age, String email, String phone, Gender gender)
+    public Client(int personId, String name, Integer age, String email, String phone, Gender gender)
     {
-        this.clientId = clientId;
+        this.personId = personId;
         this.name = name;
         this.age = age;
         this.email = email;
@@ -38,7 +36,6 @@ public class Client extends Person{
     @Override
     public String toString() {
         return "Client{" +
-                "clientId=" + clientId +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +

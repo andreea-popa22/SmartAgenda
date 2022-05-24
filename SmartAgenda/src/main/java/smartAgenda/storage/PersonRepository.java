@@ -22,7 +22,7 @@ public class PersonRepository {
     private PersonRepository()
     {
         Client client1 = Client.builder()
-                .clientId(1)
+                .personId(1)
                 .name("Popescu Andra")
                 .age(30)
                 .email("andra.popescu23@yahoo.com")
@@ -30,7 +30,7 @@ public class PersonRepository {
                 .gender(Gender.FEMALE)
                 .build();
         Client client2 = Client.builder()
-                .clientId(2)
+                .personId(2)
                 .name("Popa Andrada")
                 .age(26)
                 .email("andrada.popa01@yahoo.com")
@@ -38,7 +38,7 @@ public class PersonRepository {
                 .gender(Gender.FEMALE)
                 .build();
         Client client3 = Client.builder()
-                .clientId(3)
+                .personId(3)
                 .name("Popovici Alex")
                 .age(30)
                 .email("alex.popovici13@yahoo.com")
@@ -46,7 +46,7 @@ public class PersonRepository {
                 .gender(Gender.MALE)
                 .build();
         Provider provider1 = Provider.builder()
-                .providerId(1)
+                .personId(1)
                 .name("Muresan Elena")
                 .age(35)
                 .email("elena-muresan@yahoo.com")
@@ -54,7 +54,7 @@ public class PersonRepository {
                 .gender(Gender.FEMALE)
                 .build();
         Provider provider2 = Provider.builder()
-                .providerId(2)
+                .personId(2)
                 .name("Marcov Elena")
                 .age(52)
                 .email("elena-marcov20@yahoo.com")
@@ -80,11 +80,11 @@ public class PersonRepository {
             boolean isInstance = person instanceof Client;
             if (isInstance) {
                 result.append("Client ");
-                result.append(((Client)person).getClientId());
+                result.append(((Client)person).getPersonId());
             }
             else {
                 result.append("Provider ");
-                result.append(((Provider)person).getProviderId());
+                result.append(((Provider)person).getPersonId());
             }
             result.append(" ");
             result.append(person.getName());

@@ -4,10 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -16,5 +17,14 @@ import java.util.List;
 public class Schedule {
     @Id
     private int scheduleId;
-    //private Hashtable<String, List<TimeSlot>> schedule;
+
+    private Date date;
+
+    @ManyToMany(mappedBy = "schedules")
+    Set<TimeSlot> timeSlots;
+
+    @ManyToOne
+    @JoinColumn(name="personId", nullable=false)
+    Person people;
+
 }

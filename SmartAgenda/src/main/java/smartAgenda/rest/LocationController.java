@@ -21,7 +21,7 @@ class LocationController {
 
     @GetMapping("/")
     public String getSomething(){
-        return LocationRepository.getInstance().getLocations().toString();
+        return "Something";
     }
 
     @GetMapping("locations")

@@ -81,7 +81,7 @@ public class Service {
         }
 
         Client client = Client.builder()
-                .clientId(id)
+                .personId(id)
                 .name(name)
                 .age(age)
                 .email(email)
@@ -91,42 +91,6 @@ public class Service {
         // bug
         //PersonRepository.getInstance().getClients().add(client);
         return client;
-    }
-
-    public static Client getClientByPhoneNumber(String phone){
-        List<Client> list = PersonRepository.getInstance().getClients().stream().filter(p -> Objects.equals(p.getPhone(), phone)).map(p -> Client.builder()
-                        .clientId(p.getClientId())
-                        .name(p.getName())
-                        .age(p.getAge())
-                        .email(p.getEmail())
-                        .phone(p.getPhone())
-                        .gender(p.getGender())
-                        .build())
-                .collect(Collectors.toList());
-        // error if not found
-        return list.get(0);
-    }
-
-    public static Client getClientById(int id){
-        List<Client> list = PersonRepository.getInstance().getClients().stream().filter(p -> Objects.equals(p.getClientId(), id)).map(p -> Client.builder()
-                        .clientId(p.getClientId())
-                        .name(p.getName())
-                        .age(p.getAge())
-                        .email(p.getEmail())
-                        .phone(p.getPhone())
-                        .gender(p.getGender())
-                        .build())
-                .collect(Collectors.toList());
-        // error if not found
-        return list.get(0);
-    }
-
-    public static Provider getProviderById(int id){
-        return PersonRepository.getInstance().getProviders().stream().filter(p -> Objects.equals(p.getProviderId(), id)).findFirst().orElse(null);
-    }
-
-    public static Location getLocationById(int id){
-        return LocationRepository.getInstance().getLocations().stream().filter(p -> Objects.equals(p.getLocationId(), id)).findFirst().orElse(null);
     }
 
     public static Appointment addNewAppointment() throws ParseException {
@@ -158,7 +122,7 @@ public class Service {
 
         System.out.println("Location id: ");
         int locationId = scanner.nextInt();
-        //Location location = Service.getLocationById(locationId);
+        Location location = new Location();
 
         System.out.println("Service Type: ");
         // TODO print all service types
@@ -176,7 +140,7 @@ public class Service {
                 .hourId(hourId)
                 .clientId(clientId)
                 .providerId(providerId)
-                .locationId(locationId)
+                .location(location)
                 .serviceType(serviceType)
                 .price(price)
                 .build();
