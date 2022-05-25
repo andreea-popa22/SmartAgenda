@@ -28,4 +28,12 @@ public class LocationService {
         }
         return location;
     }
+
+    public Location findFirstById(int locationId) {
+        Location location = locationRepository.findFirstById(locationId);
+        if (location == null) {
+            throw new LocationNotFoundException("Location not found");
+        }
+        return location;
+    }
 }

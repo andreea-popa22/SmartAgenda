@@ -5,9 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
+
+import static javax.persistence.CascadeType.ALL;
 
 @Getter
 @Setter
@@ -16,6 +17,10 @@ import javax.persistence.Id;
 @DiscriminatorValue("2")
 public class Provider extends Person{
     private int experience;
+
+    @OneToMany
+    @JoinColumn(name = "person_id")
+    private List<Appointment> appointments;
     @Builder
     public Provider(int personId, int experience, String name, String phone, String email, Integer age, Gender gender)
     {

@@ -1,22 +1,31 @@
 package smartagenda.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 import smartagenda.domain.Client;
+import smartagenda.domain.Gender;
 import smartagenda.domain.Person;
 import smartagenda.domain.Provider;
 
 import java.util.List;
 
+@Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
     List<Person> findAll();
 
-    @Query(value = "SELECT p FROM Location p WHERE person_type=1")
+    //@Modifying
+    //@Query(value = "INSERT INTO Person (person_type, person_id, name, phone, email, age, gender) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)", nativeQuery = true)
+    //void insertPerson(int product_type, int person_id, String name, String phone, String email, int age, Gender gender);
+
+    @Query(value = "SELECT p FROM Person p WHERE p.person_type=1")
     List<Client> findAllClients();
 
-    @Query(value = "SELECT p FROM Location p WHERE person_type=2")
+    @Query(value = "SELECT p FROM Person p WHERE p.person_type=2")
     List<Provider> findAllProviders();
 
-    Person findFirstByPersonId(int person_id);
+    @Query(value = "SELECT p FROM Person p WHERE p.person_id=?1")
+    Person findByPersonId(int person_id);
 }

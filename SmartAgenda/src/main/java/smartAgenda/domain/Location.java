@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import java.util.List;
 import java.util.Set;
@@ -22,8 +23,10 @@ public class Location {
     private String address;
     private String contact;
 
-    @OneToMany(targetEntity=smartagenda.domain.Appointment.class, cascade=ALL,
-            mappedBy="appointment_id")
+    //@OneToMany(targetEntity=smartagenda.domain.Appointment.class, cascade=ALL,
+    //        mappedBy="appointment_id")
+    @OneToMany
+    @JoinColumn(name = "location_id")
     Set<Appointment> appointments;
 
     @Builder
