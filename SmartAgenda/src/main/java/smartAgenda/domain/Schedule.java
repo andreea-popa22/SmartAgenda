@@ -18,7 +18,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 public class Schedule {
-    @AttributeOverride(name="id", column = @Column(name="schedule_id"))
+    @AttributeOverride(name="id", column = @Column(name="scheduleId"))
     @EmbeddedId ScheduleId scheduleId;
 
     @MapsId("personPK")
@@ -26,11 +26,11 @@ public class Schedule {
     Person person;
     private Date date;
 
-    @ManyToMany(mappedBy = "schedules")
-    Set<TimeSlot> timeSlots;
+    @OneToMany(mappedBy = "schedule")
+    private List<TimeSlot> timeSlots;
 
-    @ManyToOne
-    @JoinColumn(name="person_id", nullable=false, insertable = false, updatable = false)
-    Person person;
+//    @ManyToOne
+//    @JoinColumn(name="person_id", nullable=false, insertable = false, updatable = false)
+//    Person person;
 
 }

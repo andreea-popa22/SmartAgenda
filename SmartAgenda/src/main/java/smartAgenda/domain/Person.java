@@ -25,8 +25,8 @@ public abstract class Person {
     protected Integer age;
     protected Gender gender;
 
-    @OneToMany(targetEntity=smartagenda.domain.Schedule.class, cascade=ALL,
-            mappedBy="person")
-    Set<Schedule> timetable;
+//    @OneToMany(targetEntity=smartagenda.domain.Schedule.class, cascade=ALL,
+//            mappedBy="person")
+//    Set<Schedule> timetable;
     public abstract String getDescription();
 }

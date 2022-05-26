@@ -13,7 +13,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 public class TimeSlot {
-    @AttributeOverride(name="id", column = @Column(name="timeslot_id"))
+    @AttributeOverride(name="id", column = @Column(name="timeslotId"))
     @EmbeddedId TimeslotId timeslotId;
 
     @MapsId("schedulePK")
@@ -22,10 +22,10 @@ public class TimeSlot {
     private int startHourId;
     private int endHourId;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    //@JoinTable(
-            //name = "timeslot_to_schedule",
-            @JoinColumn(name = "timeslot_id", insertable = false, updatable = false)
-            @JoinColumn(name = "schedule_id", insertable = false, updatable = false)
-    Set<Schedule> schedules;
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    //@JoinTable(
+//            //name = "timeslot_to_schedule",
+//            @JoinColumn(name = "timeslot_id", insertable = false, updatable = false)
+//            @JoinColumn(name = "schedule_id", insertable = false, updatable = false)
+//    Set<Schedule> schedules;
 }

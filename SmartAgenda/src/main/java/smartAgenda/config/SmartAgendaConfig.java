@@ -16,17 +16,17 @@ public class SmartAgendaConfig {
     @Bean
     public ModelMapper modelMapper() { return new ModelMapper(); }
 
-    @Bean
-    public Jackson2RepositoryPopulatorFactoryBean getRespositoryPopulator() {
-        Jackson2RepositoryPopulatorFactoryBean factory = new Jackson2RepositoryPopulatorFactoryBean();
-        factory.setResources(new Resource[]{new ClassPathResource("product-data.json")});
-        return factory;
-    }
-    @Bean
-    public Cache<String, Double> provideCache() {
-        return Caffeine.newBuilder()
-                .expireAfterWrite(1, TimeUnit.MINUTES)
-                .maximumSize(100)
-                .build();
-    }
+//    @Bean
+//    public Jackson2RepositoryPopulatorFactoryBean getRespositoryPopulator() {
+//        Jackson2RepositoryPopulatorFactoryBean factory = new Jackson2RepositoryPopulatorFactoryBean();
+//        factory.setResources(new Resource[]{new ClassPathResource("product-data.json")});
+//        return factory;
+//    }
+//    @Bean
+//    public Cache<String, Double> provideCache() {
+//        return Caffeine.newBuilder()
+//                .expireAfterWrite(1, TimeUnit.MINUTES)
+//                .maximumSize(100)
+//                .build();
+//    }
 }
