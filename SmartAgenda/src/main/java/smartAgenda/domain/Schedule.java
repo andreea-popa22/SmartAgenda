@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import smartagenda.domain.embeddable.ScheduleId;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -17,11 +18,12 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 public class Schedule {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "instructor_key_sequence_generator")
-    @SequenceGenerator(name = "instructor_key_sequence_generator", sequenceName = "instructor_sequence", allocationSize = 1)
-    private int scheduleId;
+    @AttributeOverride(name="id", column = @Column(name="schedule_id"))
+    @EmbeddedId ScheduleId scheduleId;
 
+    @MapsId("personPK")
+    @ManyToOne
+    Person person;
     private Date date;
 
     @ManyToMany(mappedBy = "schedules")

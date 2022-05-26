@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Embeddable
-public class TimeslotId implements Serializable {
+public class ScheduleId implements Serializable {
     private int id;
-    private int schedulePK;
+    private int personPK;
 }

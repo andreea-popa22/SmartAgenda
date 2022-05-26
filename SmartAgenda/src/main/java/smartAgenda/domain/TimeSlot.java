@@ -13,12 +13,12 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 public class TimeSlot {
-    @AttributeOverride(name="id", column = @Column(name="timeslotId"))
+    @AttributeOverride(name="id", column = @Column(name="timeslot_id"))
     @EmbeddedId TimeslotId timeslotId;
 
-    @MapsId("personPK")
+    @MapsId("schedulePK")
     @ManyToOne
-    Person person;
+    Schedule schedule;
     private int startHourId;
     private int endHourId;
 
