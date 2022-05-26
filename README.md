@@ -4,7 +4,7 @@
 
 I developed the backend for a smart agenda app, where users can be either consumers or providers. Consumers can make appointments for different types of services (medical, selfcare, entertainment, etc.), while providers are in charge of these appointments. 
 
-
+![Database Diagram](https://github.com/andreea-popa22/SmartAgenda/blob/master/diagram.png)
 
 ### 📋 Java DevCamp sessions:
 
