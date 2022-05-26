@@ -49,7 +49,7 @@ class LocationController {
 
     @GetMapping("locations/{locationId}")
     public Location getLocation(@PathVariable int locationId) {
-        return locationService.findFirstById(locationId);
+        return locationService.findFirstByLocationId(locationId);
     }
 
 }

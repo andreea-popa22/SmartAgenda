@@ -28,7 +28,7 @@ public class Schedule {
     Set<TimeSlot> timeSlots;
 
     @ManyToOne
-    @JoinColumn(name="personId", nullable=false)
-    Person people;
+    @JoinColumn(name="person_id", nullable=false, insertable = false, updatable = false)
+    Person person;
 
 }

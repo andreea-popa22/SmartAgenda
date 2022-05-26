@@ -1,7 +1,7 @@
 [
   {
     "_class": "smartagenda.domain.Client",
-    "type": "Client",
+    "person_type": "1",
     "name": "Popescu Ionut",
     "age": 25,
     "email": "popescu.ionut@gmail.com",
@@ -10,17 +10,18 @@
   },
   {
     "_class": "smartagenda.domain.Provider",
-    "type": "Provider",
+    "person_type": "2",
     "name": "Marcu Sorin",
     "age": 35,
     "email": "marcu.sorin@gmail.com",
     "phone": "076523448",
-    "gender": "MALE"
+    "gender": "MALE",
+    "experience": 3
   },
   {
     "_class": "smartagenda.domain.Location",
-    "name": "Salon Coquette",
     "address": "Strada Libertatii 14",
-    "contact": "0765445654"
+    "contact": "0765445654",
+    "name": "Salon Coquette"
   }
 ]

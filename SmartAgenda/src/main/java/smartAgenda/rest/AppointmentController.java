@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
 import smartagenda.domain.Appointment;
+import smartagenda.rest.exception.AppointmentNotFoundException;
 import smartagenda.service.AppointmentService;
 
 import java.util.Date;
@@ -32,9 +33,22 @@ public class AppointmentController {
         appointmentService.addAppointment(appointment);
     }
 
+    @GetMapping("appointment/{appointment_id}")
+    public Appointment getFirstByAppointmentId(@PathVariable int appointment_id) {
+        Appointment appointment = appointmentService.findFirstByAppointmentId(appointment_id);
+        if (appointment == null) {
+            throw new AppointmentNotFoundException("No appointment found");
+        }
+        return appointment;
+    }
+
     @GetMapping("appointments/{personId}")
     public List<Appointment> getAppointmentsForPerson(@PathVariable int personId) {
-        return appointmentService.findAppointmentsForPerson(personId);
+        List<Appointment> appointments = appointmentService.findAppointmentsForPerson(personId);
+        if (appointments.size() == 0) {
+            throw new AppointmentNotFoundException("No appointment found for selected person");
+        }
+        return appointments;
     }
 
     @GetMapping("appointments/after{date}")

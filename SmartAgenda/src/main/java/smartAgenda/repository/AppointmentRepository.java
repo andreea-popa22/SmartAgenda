@@ -20,15 +20,15 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Long> 
     @Query(value = "SELECT a FROM Appointment a WHERE a.date = ?1")
     List<Appointment> findAllByDate(Date date);
 
-    @Query(value = "SELECT a FROM Appointment a WHERE a.appointment_id=?1")
-    Appointment findAppointmentById(int appointmentId);
+    @Query(value = "SELECT a FROM Appointment a WHERE a.appointment_id=?1", nativeQuery = true)
+    Appointment findFirstByAppointmentId(int appointmentId);
 
-    @Query(value = "SELECT * FROM Appointment a WHERE a.person_id=?1")
+    @Query(value = "SELECT * FROM Appointment a WHERE a.person_id=?1", nativeQuery = true)
     List<Appointment> findAppointmentsForPerson(int personId);
 
-    @Query(value = "SELECT * FROM Appointment a WHERE a.person_id=?1")
-    List<Appointment> findAppointmentsForClient(int personId);
-
-    @Query(value = "SELECT * FROM Appointment a WHERE a.person_id=?1")
-    List<Appointment> findAppointmentsForProvider(int personId);
+//    @Query(value = "SELECT * FROM Appointment a WHERE a.person_id=?1")
+//    List<Appointment> findAppointmentsForClient(int personId);
+//
+//    @Query(value = "SELECT * FROM Appointment a WHERE a.person_id=?1")
+//    List<Appointment> findAppointmentsForProvider(int personId);
 }

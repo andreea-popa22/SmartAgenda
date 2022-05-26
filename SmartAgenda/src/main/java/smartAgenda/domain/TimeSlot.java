@@ -1,17 +1,14 @@
 package smartagenda.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import smartagenda.domain.embeddable.TimeslotId;
 
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -20,14 +17,15 @@ public class TimeSlot {
     @EmbeddedId TimeslotId timeslotId;
 
     @MapsId("personPK")
-    @ManyToOne Person person;
+    @ManyToOne
+    Person person;
     private int startHourId;
     private int endHourId;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "timeslot_to_schedule",
-            joinColumns = @JoinColumn(name = "schedule_id"),
-            inverseJoinColumns = @JoinColumn(name = "timeslot_id"))
+    //@JoinTable(
+            //name = "timeslot_to_schedule",
+            @JoinColumn(name = "timeslot_id", insertable = false, updatable = false)
+            @JoinColumn(name = "schedule_id", insertable = false, updatable = false)
     Set<Schedule> schedules;
 }

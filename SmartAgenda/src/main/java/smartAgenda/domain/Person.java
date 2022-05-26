@@ -14,7 +14,6 @@ import static javax.persistence.CascadeType.ALL;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="person_type", discriminatorType = DiscriminatorType.STRING)
 @NoArgsConstructor
-
 public abstract class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "product_key_sequence_generator")
@@ -27,7 +26,7 @@ public abstract class Person {
     protected Gender gender;
 
     @OneToMany(targetEntity=smartagenda.domain.Schedule.class, cascade=ALL,
-            mappedBy="schedule_id")
+            mappedBy="person")
     Set<Schedule> timetable;
     public abstract String getDescription();
 }

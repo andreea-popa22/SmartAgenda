@@ -11,9 +11,9 @@ import java.util.Comparator;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
+//@Entity
 public class Hour implements Comparator<Hour> {
-    @Id
+    //@Id
     private int hourId;
     private int hour;
     private int minutes;

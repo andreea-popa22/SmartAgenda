@@ -29,8 +29,8 @@ public class LocationService {
         return location;
     }
 
-    public Location findFirstById(int locationId) {
-        Location location = locationRepository.findFirstById(locationId);
+    public Location findFirstByLocationId(int locationId) {
+        Location location = locationRepository.findFirstByLocationId(locationId);
         if (location == null) {
             throw new LocationNotFoundException("Location not found");
         }

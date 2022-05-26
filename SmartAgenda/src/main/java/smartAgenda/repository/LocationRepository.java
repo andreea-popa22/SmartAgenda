@@ -17,7 +17,7 @@ public interface LocationRepository extends JpaRepository<Location, Long> {
     @Query(value = "SELECT l FROM Location l WHERE l.name=?1")
     Location findFirstByName(String name);
 
-    @Query(value = "SELECT l FROM Location l WHERE l.location_id=?1")
-    Location findFirstById(int locationId);
+    @Query(value = "SELECT l FROM Location l WHERE l.location_id=?1", nativeQuery = true)
+    Location findFirstByLocationId(int locationId);
 
 }

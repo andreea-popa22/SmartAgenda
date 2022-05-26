@@ -11,13 +11,13 @@ import java.util.List;
 @Repository
 public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
 
-    @Query(value = "SELECT s FROM Schedule WHERE s.personId=?1")
+    @Query(value = "SELECT s FROM Schedule WHERE s.personId=?1", nativeQuery = true)
     Schedule findScheduleForPerson(int personId);
 
-    @Query(value = "SELECT s FROM Schedule WHERE s.personId=?1")
+    @Query(value = "SELECT s FROM Schedule WHERE s.personId=?1", nativeQuery = true)
     Schedule findScheduleForClient(int personId);
 
-    @Query(value = "SELECT s FROM Schedule WHERE s.personId=?1")
+    @Query(value = "SELECT s FROM Schedule WHERE s.personId=?1", nativeQuery = true)
     Schedule findScheduleForProvider(int personId);
 
 }
